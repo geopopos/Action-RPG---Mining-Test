@@ -1,0 +1,15 @@
+### Scope
+[] create tilemap
+[] create world
+[] set up player & Player movement
+[] set up player equipables
+[] set up minables
+   [] add "health"
+   [] add "death" sequence
+   [] add "item drop"
+   [] set up minable respawn timer
+[] create inventory system
+[] have player pick up items
+
+
+
