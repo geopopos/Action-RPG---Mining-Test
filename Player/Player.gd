@@ -8,12 +8,16 @@ var velocity = Vector2.ZERO
 onready var sprite = $Sprite
 onready var animationPlayer = $AnimationPlayer
 onready var hitbox = $Hitbox
+onready var hitboxCollisionShape2D = $Hitbox/CollisionShape2D
 
 func _ready():
 	animationPlayer.play("Idle")
 
 func _physics_process(delta):
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	
+	if Input.is_action_just_released("attack"):
+		hitboxCollisionShape2D.disabled = true
 	
 	if Input.is_action_pressed("attack"):
 		animationPlayer.play("Mining")
