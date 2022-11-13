@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/d88d7290-c626-46e0-aa0b-d0c4cf294982.png-1c8e05970d54ec79ea943ce3324af73a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://Player/Mining/d88d7290-c626-46e0-aa0b-d0c4cf294982.png"
+dest_files=[ "res://.import/d88d7290-c626-46e0-aa0b-d0c4cf294982.png-1c8e05970d54ec79ea943ce3324af73a.stex" ]
 
 [params]
 

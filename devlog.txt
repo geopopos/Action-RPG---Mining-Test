@@ -1,6 +1,6 @@
 ### Scope
-[] create tilemap
-[] create world
+[x] create tilemap
+[x] create world
 [] set up player & Player movement
 [] set up player equipables
 [] set up minables
