@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/e42dde42-67a6-4893-bdf7-f5dc09deea8d.png-edd81520e78a81d2c4b5937d22aac2b0.stex"
+path="res://.import/Step 9.png-bbd78308be38761e610c318b70be31da.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Walking/e42dde42-67a6-4893-bdf7-f5dc09deea8d.png"
-dest_files=[ "res://.import/e42dde42-67a6-4893-bdf7-f5dc09deea8d.png-edd81520e78a81d2c4b5937d22aac2b0.stex" ]
+source_file="res://Player/Idle/Step 9.png"
+dest_files=[ "res://.import/Step 9.png-bbd78308be38761e610c318b70be31da.stex" ]
 
 [params]
 

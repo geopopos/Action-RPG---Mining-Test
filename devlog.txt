@@ -1,12 +1,18 @@
 ### Scope
 [x] create tilemap
 [x] create world
-[] set up player & Player movement
+[x] set up player & Player movement
+   [x] player animations
 [] set up player equipables
+   [x] mining hitbox
+	- fixed issue had to make sure we moved the hitbox when we flipped the player direction (Thank you Jakyl)
 [] set up minables
-   [] add "health"
-   [] add "death" sequence
-   [] add "item drop"
+   [x] hurtbox
+   [x] add "health"
+   [x] add "death" sequence
+   [x] add "item drop"
+      [x] create "mined" item to spawn
+_________
    [] set up minable respawn timer
 [] create inventory system
 [] have player pick up items
