@@ -19,7 +19,7 @@ _________
 
 [] REFACTOR CODE
 
-### Prettification
+### Prettification [UP NEXT]
 [] add sound effects to mining
 [] add sound effects to walking
 [] add animation to mining sequence
@@ -33,8 +33,8 @@ _________
 noticed when running the game that if we release the attack button mid-animation while the hitbox for the pickaxe is not disabled we'll walk around with an active hitbox
 - added check in _physics_process if the "attack" action was just released. set the hitbox collisionshape disabled to true 
 
-[] picking up items
-   [] on player collides with item collision shape
-      [] signal on_body_entered
-         [] call function to add item to inventory
-         [] queue_free()
+[x] picking up items
+   [x] on player collides with item collision shape
+      [x] signal on_body_entered
+         [x] call function to add item to inventory
+         [x] queue_free()
