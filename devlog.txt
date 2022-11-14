@@ -14,7 +14,7 @@
       [x] create "mined" item to spawn
 _________
    [x] set up minable respawn timer
-[] create inventory system
+[x] create inventory system
 [] have player pick up items
 [] REFACTOR CODE
 
@@ -25,9 +25,15 @@ _________
    [] particles when hitting "minable"
 [] add animation to broken minable
 [] add animation to "spit" out rocks mined item
-
+[] add shadow to items <- take heartbeast's shadow from his action rpg tutorial
 
 
 11-13-2022
 noticed when running the game that if we release the attack button mid-animation while the hitbox for the pickaxe is not disabled we'll walk around with an active hitbox
 - added check in _physics_process if the "attack" action was just released. set the hitbox collisionshape disabled to true 
+
+[] picking up items
+   [] on player collides with item collision shape
+      [] signal on_body_entered
+         [] call function to add item to inventory
+         [] queue_free()

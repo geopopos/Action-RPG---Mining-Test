@@ -9,6 +9,7 @@ onready var sprite = $Sprite
 onready var animationPlayer = $AnimationPlayer
 onready var hitbox = $Hitbox
 onready var hitboxCollisionShape2D = $Hitbox/CollisionShape2D
+onready var inventory = $Inventory
 
 func _ready():
 	animationPlayer.play("Idle")
