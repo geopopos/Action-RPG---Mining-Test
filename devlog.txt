@@ -15,7 +15,8 @@
 _________
    [x] set up minable respawn timer
 [x] create inventory system
-[] have player pick up items
+[x] have player pick up items
+
 [] REFACTOR CODE
 
 ### Prettification

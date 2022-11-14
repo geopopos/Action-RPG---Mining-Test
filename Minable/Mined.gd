@@ -14,7 +14,9 @@ var item_data = {
 }
 
 func _on_Mined_body_entered(body):
-	body.inventory.add_item(item_data)
+	var picked_up = body.inventory.add_item(item_data)
+	if picked_up["picked_up"]:
+		queue_free()
 
 
 #func _on_Mined_area_entered(area):

@@ -93,3 +93,5 @@ anims/Mining = SubResource( 7 )
 anims/Walking = SubResource( 6 )
 
 [node name="Inventory" parent="." instance=ExtResource( 3 )]
+inventory_size = 2
+inventory_stacking = 1
