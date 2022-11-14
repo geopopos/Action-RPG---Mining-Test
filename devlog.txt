@@ -17,17 +17,20 @@ _________
 [x] create inventory system
 [x] have player pick up items
 
-[] REFACTOR CODE
 
 ### Prettification [UP NEXT]
-[] add sound effects to mining
+[x] add sound effects to mining
+[x] add sound effect for picking up item
 [] add sound effects to walking
 [] add animation to mining sequence
    [] particles when hitting "minable"
 [] add animation to broken minable
+   [x] sound effects
 [] add animation to "spit" out rocks mined item
 [] add shadow to items <- take heartbeast's shadow from his action rpg tutorial
 
+### IMPORTANT
+[] REFACTOR CODE
 
 ### MISC
 [] learn how to take systems from one godot project and import them into another :)

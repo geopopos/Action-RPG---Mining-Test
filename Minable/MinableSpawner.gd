@@ -17,7 +17,7 @@ func _ready():
 	visible = false
 	timer.start(0.1)
 
-func _process(delta):
+func _process(_delta):
 	if state == ACTIVE and timer.is_stopped():
 		print("start_timer")
 		timer.start(spawn_frequency)
@@ -34,6 +34,6 @@ func set_state(value):
 
 func _on_Timer_timeout():
 	print("timeout")
-	for i in range(0, spawn_rate, 1):
+	for _i in range(0, spawn_rate, 1):
 		create_new_minable()
 		state = INACTIVE
