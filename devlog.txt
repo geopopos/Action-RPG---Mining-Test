@@ -13,7 +13,7 @@
    [x] add "item drop"
       [x] create "mined" item to spawn
 _________
-   [] set up minable respawn timer
+   [x] set up minable respawn timer
 [] create inventory system
 [] have player pick up items
 [] REFACTOR CODE

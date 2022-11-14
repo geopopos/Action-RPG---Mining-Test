@@ -1,6 +1,7 @@
 extends KinematicBody2D
 # add health option of multiples of threes to keep rock animation consistent
 var health = 3
+var spawner
 
 onready var sprite = $Sprite as Sprite
 onready var hurtboxCollisionShape = $Hurtbox/CollisionShape2D
@@ -15,6 +16,7 @@ func _on_Hurtbox_area_entered(area):
 			death()
 
 func death():
+	spawner.set_state(1)
 	hurtboxCollisionShape.disabled = true
 	var mined = Mined.instance()
 	mined.global_position = global_position

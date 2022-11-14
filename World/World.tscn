@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://World/output_tileset.png" type="Texture" id=1]
 [ext_resource path="res://Minable/Minable.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Minable/MinableSpawner.tscn" type="PackedScene" id=4]
 
 [sub_resource type="TileSet" id=1]
 0/name = "output_tileset.png 0"
@@ -30,8 +31,6 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 
 [node name="Minable" type="YSort" parent="."]
 
-[node name="Minable" parent="Minable" instance=ExtResource( 2 )]
-
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
@@ -41,3 +40,6 @@ remote_path = NodePath("../../Camera2D")
 position = Vector2( 199, 154 )
 current = true
 zoom = Vector2( 0.3, 0.3 )
+
+[node name="MinableSpawner" parent="." instance=ExtResource( 4 )]
+Minable = ExtResource( 2 )
