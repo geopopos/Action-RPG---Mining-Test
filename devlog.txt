@@ -22,12 +22,10 @@ _________
 [x] add sound effects to mining
 [x] add sound effect for picking up item
 [] add sound effects to walking
-[] add animation to mining sequence
-   [] particles when hitting "minable"
-[] add animation to broken minable
+[x] add animation to broken minable
    [x] sound effects
-[] add animation to "spit" out rocks mined item
-[] add shadow to items <- take heartbeast's shadow from his action rpg tutorial
+[x] add animation to "spit" out rocks mined item
+[x] add shadow to items <- take heartbeast's shadow from his action rpg tutorial
 
 ### IMPORTANT
 [] REFACTOR CODE

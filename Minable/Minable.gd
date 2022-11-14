@@ -10,6 +10,7 @@ var spawner
 onready var sprite = $Sprite as Sprite
 onready var hurtboxCollisionShape = $Hurtbox/CollisionShape2D
 var audioFile = "res://SFX/Rock_Break.wav"
+onready var Effect = preload("res://Effects/Effect.tscn")
 
 export var Mined = preload("res://Minable/Mined.tscn")
 
@@ -25,6 +26,9 @@ func _on_Hurtbox_area_entered(area):
 
 func death():
 	emit_signal("minable_broken", audioFile)
+	var effect = Effect.instance()
+	effect.global_position = global_position
+	get_tree().current_scene.add_child(effect)
 	spawner.set_state(1)
 	hurtboxCollisionShape.set_deferred("disabled", true)
 	var mined = Mined.instance()
