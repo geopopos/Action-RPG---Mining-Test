@@ -1,7 +1,7 @@
 extends Node2D
 
 export var spawn_rate = 1
-export var spawn_frequency = 2
+export var spawn_frequency = 30
 export(Resource) var Minable
 
 enum {
@@ -15,6 +15,7 @@ onready var timer = $Timer
 
 func _ready():
 	visible = false
+	timer.start(0.1)
 
 func _process(delta):
 	if state == ACTIVE and timer.is_stopped():
