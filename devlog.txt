@@ -29,6 +29,9 @@ _________
 [] add shadow to items <- take heartbeast's shadow from his action rpg tutorial
 
 
+### MISC
+[] learn how to take systems from one godot project and import them into another :)
+
 11-13-2022
 noticed when running the game that if we release the attack button mid-animation while the hitbox for the pickaxe is not disabled we'll walk around with an active hitbox
 - added check in _physics_process if the "attack" action was just released. set the hitbox collisionshape disabled to true 
