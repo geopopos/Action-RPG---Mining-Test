@@ -19,10 +19,12 @@ func _physics_process(delta):
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 	if Input.is_action_just_pressed("inventory"):
-		inventoryPanel.load_inventory()
+		inventoryPanel.load_inventory(inventory.inventory)
 		inventoryPanel.visible = true
 	if Input.is_action_just_released("inventory"):
+		get_tree().paused = false
 		inventoryPanel.visible = false
+		
 	
 	if Input.is_action_just_released("attack"):
 		hitboxCollisionShape2D.disabled = true
