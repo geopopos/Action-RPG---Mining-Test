@@ -14,7 +14,7 @@ var state = STOP
 
 onready var timer = $LaunchTimer
 
-export(Texture) var inventory_texture
+export(String) var inventory_texture = "res://Minable/Mined.png"
 export(String) var audioFile = "res://SFX/pickupCoin.wav"
 
 signal item_pickup(audioFile)
@@ -24,8 +24,6 @@ func _ready():
 	timer.start(1.5)
 
 func set_hitbox_pos(hitbox_global_pos):
-	print("GLOBAL POS:" + str(global_position))
-	print("HITBOX GLOBAL POS:" + str(hitbox_global_pos))
 	direction = -1 * (self.global_position.direction_to(hitbox_global_pos))
 	state = MOVE
 	
@@ -45,6 +43,7 @@ var item_data = {
 
 func _on_Mined_body_entered(body):
 	emit_signal("item_pickup", audioFile)
+	print("TEXTURE" + str(inventory_texture))
 	var picked_up = body.inventory.add_item(item_data)
 	if picked_up["picked_up"]:
 		queue_free()
