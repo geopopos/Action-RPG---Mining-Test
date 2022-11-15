@@ -22,9 +22,9 @@ func _on_Hurtbox_area_entered(area):
 		health -= 1
 		sprite.set_frame(health)
 		if health <= 0:
-			death()
+			death(area.get_parent().global_position)
 
-func death():
+func death(hitbox_global_position):
 	emit_signal("minable_broken", audioFile)
 	var effect = Effect.instance()
 	effect.global_position = global_position
@@ -33,6 +33,7 @@ func death():
 	hurtboxCollisionShape.set_deferred("disabled", true)
 	var mined = Mined.instance()
 	mined.global_position = global_position
+	mined.set_hitbox_pos(hitbox_global_position)
 	get_tree().current_scene.add_child(mined)
 	queue_free()
 	

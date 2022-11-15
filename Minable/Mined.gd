@@ -10,7 +10,7 @@ export var item_name = "rock"
 export var stackable = true
 var direction
 
-var state = MOVE
+var state = STOP
 
 onready var timer = $LaunchTimer
 
@@ -20,11 +20,15 @@ export(String) var audioFile = "res://SFX/pickupCoin.wav"
 signal item_pickup(audioFile)
 
 func _ready():
-	var random = RandomNumberGenerator.new()
-	random.randomize()
 	var _nr = self.connect("item_pickup",get_tree().current_scene, "play_sound")
-	direction = Vector2(random.randf(), random.randf())
 	timer.start(1.5)
+
+func set_hitbox_pos(hitbox_global_pos):
+	print("GLOBAL POS:" + str(global_position))
+	print("HITBOX GLOBAL POS:" + str(hitbox_global_pos))
+	direction = -1 * (self.global_position.direction_to(hitbox_global_pos))
+	state = MOVE
+	
 	
 	
 	
