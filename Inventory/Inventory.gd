@@ -6,18 +6,20 @@ var inventory = []
 
 func add_item(item):
 	print(item)
+	# check if item exists if so save it's invetory slot
+	var item_exists = false
+	var inventory_slot
+	for i in range(0, inventory.size(), 1):
+		if inventory[i]["id"] == item["id"]:
+			item_exists = true
+			inventory_slot = i
 	# check if inventory is full (if so, return error keep item in world)
 	var inventory_full = inventory.size() >= inventory_size
-	if inventory_full:
+	if inventory_full and not item_exists:
 		print("inventory full. Cannot pick up any more items")
 		return {"picked_up": false}
 	else:
-		var item_exists = false
-		var inventory_slot
-		for i in range(0, inventory.size(), 1):
-			if inventory[i]["id"] == item["id"]:
-				item_exists = true
-				inventory_slot = i
+		
 		if item_exists:
 			# check if item is stackable
 			if item.get("stackable"):

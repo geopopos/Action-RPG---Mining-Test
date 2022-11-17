@@ -48,7 +48,7 @@ func set_up(id, global_position):
 func _ready():
 	var _nr = self.connect("item_pickup",get_tree().current_scene, "play_sound")
 	sprite.texture = load(mined_item["inventory_texture"])
-	timer.start(1.5)
+	timer.start(0.5)
 	
 
 func set_hitbox_pos(hitbox_global_pos):
