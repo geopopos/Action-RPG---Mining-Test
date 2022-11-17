@@ -73,6 +73,9 @@ func _on_Mined_body_entered(body):
 	if picked_up["picked_up"]:
 		emit_signal("item_pickup", audioFile)
 		queue_free()
+	else:
+		var playerMessage = get_tree().current_scene.get_node('Camera2D').get_node('PlayerMessage')
+		playerMessage.display_message("Your Inventory Is Full")
 
 func _on_LaunchTimer_timeout():
 	state = STOP
