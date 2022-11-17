@@ -5,8 +5,8 @@ enum {
 	MOVE
 }
 
-export var id = "1"
-export var item_name = "rock"
+export var id = "2"
+export var item_name = "Iron Ore"
 export var stackable = true
 var direction
 
@@ -14,7 +14,7 @@ var state = STOP
 
 onready var timer = $LaunchTimer
 
-export(String) var inventory_texture = "res://Minable/Mined.png"
+export(String) var inventory_texture = "res://Minable/mined-iron.png"
 export(String) var audioFile = "res://SFX/pickupCoin.wav"
 
 signal item_pickup(audioFile)

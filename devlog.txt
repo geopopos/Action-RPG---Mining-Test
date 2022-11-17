@@ -27,6 +27,8 @@ _________
 [x] add animation to "spit" out rocks mined item
 [x] add shadow to items <- take heartbeast's shadow from his action rpg tutorial
 
+[] add other minable ores with different dropped mining items
+
 ### IMPORTANT
 [] REFACTOR CODE
 
@@ -42,3 +44,7 @@ noticed when running the game that if we release the attack button mid-animation
       [x] signal on_body_entered
          [x] call function to add item to inventory
          [x] queue_free()
+
+
+11-16-2022
+Trying to add multiple minable types to map. Current Minable Spawner, Minable, and Mined are not easily extensible
