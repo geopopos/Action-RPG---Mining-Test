@@ -71,6 +71,7 @@ script = ExtResource( 5 )
 
 [node name="Timer" type="Timer" parent="Camera2D/PlayerMessage"]
 wait_time = 2.0
+one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

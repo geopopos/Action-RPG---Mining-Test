@@ -27,12 +27,14 @@ _________
 [x] add animation to "spit" out rocks mined item
 [x] add shadow to items <- take heartbeast's shadow from his action rpg tutorial
 
-[] add other minable ores with different dropped mining items
+[x] add other minable ores with different dropped mining items
 
 ### IMPORTANT
 [] REFACTOR CODE
 
 ### MISC
+[x] set up timer for items so they automatically disappear if they are not picked up after a certain amount of time
+[x] make it so that the mined item fly's to the player if the player is within is detection area
 [] learn how to take systems from one godot project and import them into another :)
 
 11-13-2022
