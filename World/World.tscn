@@ -32,14 +32,17 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 
 [node name="MinableSpawner" parent="." instance=ExtResource( 4 )]
 spawn_frequency = 60
+minableType = "rock"
 
 [node name="MinableSpawner2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 331, 190 )
 spawn_frequency = 60
+minableType = "iron"
 
 [node name="MinableSpawner3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 288, 165 )
 spawn_frequency = 60
+minableType = "iron"
 
 [node name="Minable" type="YSort" parent="."]
 

@@ -2,7 +2,8 @@ extends Node2D
 
 export var spawn_rate = 1
 export var spawn_frequency = 30
-export(Resource) var Minable
+export(String, "rock", "iron") var minableType
+export(Resource) var Minable = preload("res://Minable/Minable.tscn")
 
 enum {
 	INACTIVE,
@@ -19,21 +20,17 @@ func _ready():
 
 func _process(_delta):
 	if state == ACTIVE and timer.is_stopped():
-		print("start_timer")
 		timer.start(spawn_frequency)
 
 func create_new_minable():
-	print("new minable spawned")
 	var minable = Minable.instance()
-	minable.spawner = self
-	minable.global_position = global_position
+	minable.set_up(minableType, self, global_position)
 	get_tree().current_scene.add_child(minable)
 
 func set_state(value):
 	state = value
 
 func _on_Timer_timeout():
-	print("timeout")
 	for _i in range(0, spawn_rate, 1):
 		create_new_minable()
 		state = INACTIVE
