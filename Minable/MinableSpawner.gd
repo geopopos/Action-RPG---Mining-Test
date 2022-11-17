@@ -2,7 +2,7 @@ extends Node2D
 
 export var spawn_rate = 1
 export var spawn_frequency = 30
-export(String, "rock", "iron") var minableType
+export(String, "rock", "iron", "diamond") var minableType
 export(Resource) var Minable = preload("res://Minable/Minable.tscn")
 
 enum {

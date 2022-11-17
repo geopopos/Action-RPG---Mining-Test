@@ -17,10 +17,16 @@ var mined_item_data = {
 		"item_name": "Iron Ore",
 		"stackable": true,
 		"inventory_texture": "res://Minable/mined-iron.png"
+	},
+	"3": {
+		"id": "3",
+		"item_name": "Diamond Ore",
+		"stackable": true,
+		"inventory_texture": "res://Minable/mined-diamond.png"
 	}
 }
 
-export var id = "2"
+export(String) var id
 var mined_item
 var direction
 var item_data
@@ -34,8 +40,8 @@ export(String) var audioFile = "res://SFX/pickupCoin.wav"
 
 signal item_pickup(audioFile)
 
-func set_up(id, global_position):
-	id = id
+func set_up(minable_id, global_position):
+	id = minable_id
 	mined_item = mined_item_data[id]
 	item_data = {
 		"id": mined_item["id"],
@@ -63,9 +69,9 @@ func _physics_process(delta):
 		position += direction * 20 * delta
 
 func _on_Mined_body_entered(body):
-	emit_signal("item_pickup", audioFile)
 	var picked_up = body.inventory.add_item(item_data)
 	if picked_up["picked_up"]:
+		emit_signal("item_pickup", audioFile)
 		queue_free()
 
 func _on_LaunchTimer_timeout():

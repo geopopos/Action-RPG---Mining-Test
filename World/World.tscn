@@ -44,6 +44,11 @@ position = Vector2( 288, 165 )
 spawn_frequency = 60
 minableType = "iron"
 
+[node name="MinableSpawner4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 127, 156 )
+spawn_frequency = 60
+minableType = "diamond"
+
 [node name="Minable" type="YSort" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]

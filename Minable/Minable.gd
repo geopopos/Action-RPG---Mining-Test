@@ -16,6 +16,10 @@ var minable_data = {
 	"iron": {
 		"texture": "res://Minable/minable-iron.png",
 		"mined": "2"
+	},
+	"diamond": {
+		"texture": "res://Minable/minable-diamond.png",
+		"mined": "3"
 	}
 }
 
@@ -27,10 +31,9 @@ onready var Effect = preload("res://Effects/Effect.tscn")
 
 export(Resource) var Mined = preload("res://Minable/Mined.tscn")
 
-func set_up(type, spawner, global_position):
-	print(minable_data[type]["texture"])
-	self.type = type
-	self.spawner = spawner
+func set_up(minable_type, minable_spawner, global_position):
+	self.type = minable_type
+	self.spawner = minable_spawner
 	self.global_position = global_position
 	
 
