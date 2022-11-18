@@ -4,22 +4,25 @@ signal minable_broken(audioFile)
 
 
 # add health option of multiples of threes to keep rock animation consistent
-var health = 3
+var health
 var spawner
 var type
 
 var minable_data = {
 	"rock": {
 		"texture": "res://Minable/Minable.png",
-		"mined": "1"
+		"mined": "1",
+		"health": 3
 	},
 	"iron": {
 		"texture": "res://Minable/minable-iron.png",
-		"mined": "2"
+		"mined": "2",
+		"health": 6
 	},
 	"diamond": {
 		"texture": "res://Minable/minable-diamond.png",
-		"mined": "3"
+		"mined": "3",
+		"health": 9
 	}
 }
 
@@ -35,6 +38,7 @@ func set_up(minable_type, minable_spawner, global_position):
 	self.type = minable_type
 	self.spawner = minable_spawner
 	self.global_position = global_position
+	health = minable_data[type]["health"]
 	
 
 func _ready():
@@ -46,7 +50,8 @@ func _ready():
 func _on_Hurtbox_area_entered(area):
 	if area.get("type") == "Mining":
 		health -= 1
-		sprite.set_frame(health)
+		var frame = ceil(health/3) + 1
+		sprite.set_frame(frame)
 		if health <= 0:
 			death(area.get_parent().global_position)
 
