@@ -49,7 +49,8 @@ func _ready():
 
 func _on_Hurtbox_area_entered(area):
 	if area.get("type") == "Mining":
-		health -= 1
+		var damage = area.strength
+		health -= damage
 		var frame = ceil(health/3) + 1
 		sprite.set_frame(frame)
 		if health <= 0:
