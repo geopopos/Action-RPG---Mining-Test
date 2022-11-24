@@ -100,7 +100,6 @@ rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 2 )]
-strength = 9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 4 )

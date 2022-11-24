@@ -1,3 +1,30 @@
+11-23-2022
+[x] create forrestry nodes
+[] combine forrestry and mining into single set of nodes call ResourceItem, Resource, ResourceSpawner
+   - set up a dicitionary that is read in with literally all of the possible resource data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Scope
 [x] create tilemap
 [x] create world
