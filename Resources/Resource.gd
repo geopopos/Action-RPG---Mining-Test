@@ -7,6 +7,7 @@ var health
 var max_health
 var spawner
 var type
+var healthBarConversion
 
 var resource_data = {
 	"rock": {
@@ -40,22 +41,24 @@ var hurtboxCollisionShape
 onready var sprite = $Sprite as Sprite
 onready var treeHurtBox = $Hurtbox/Tree
 onready var miningHurtBox = $Hurtbox/Mining
+onready var healthBar = $Health
 
 var audioFile = "res://SFX/fall.wav"
 var hitAudio = "res://SFX/hitWood.wav"
+
 onready var Effect = preload("res://Effects/Effect.tscn")
 
 
-export(Resource) var Mined = preload("res://Forrestry/Resource_Item.tscn")
+export(Resource) var Mined = preload("res://Resources/Resource_Item.tscn")
 
 func set_up(minable_type, minable_spawner, global_position):
 	self.type = minable_type
 	self.spawner = minable_spawner
 	self.global_position = global_position
-	print(type)
-	print(resource_data)
 	health = resource_data[type]["health"]
 	max_health = health
+	healthBarConversion = float(6.0/max_health)
+	print(healthBarConversion)
 	
 
 func _ready():
@@ -89,11 +92,13 @@ func _on_Hurtbox_area_entered(area):
 	var damage = area.strength
 	if area.get("type") != resource_data[type]["hitBoxType"]:
 		damage = damage * .1
-	print("hit")
 	emit_signal("resource_broken", hitAudio)
 	health -= damage
 	var frame = ceil(float(health)/(max_health/3))
 	sprite.set_frame(frame)
+	var healthBarFrame = health * healthBarConversion
+	print(healthBarFrame)
+	healthBar.frame = healthBarFrame
 	if health <= 0:
 		death(area.get_parent().global_position)
 

@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Shadows/SmallShadow.png" type="Texture" id=1]
 [ext_resource path="res://Minable/mined-iron.png" type="Texture" id=2]
-[ext_resource path="res://Forrestry/Resource_Item.gd" type="Script" id=3]
-[ext_resource path="res://Minable/PlayerDetectionArea.gd" type="Script" id=4]
+[ext_resource path="res://Minable/PlayerDetectionArea.gd" type="Script" id=3]
+[ext_resource path="res://Resources/Resource_Item.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -40,11 +40,11 @@ radius = 43.0008
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.0
 
-[node name="Resource" type="KinematicBody2D"]
+[node name="Resource_Item" type="KinematicBody2D"]
 position = Vector2( 0, -1.25783 )
 collision_layer = 16
 collision_mask = 0
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="SmallShadow" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.717647 )
@@ -67,7 +67,7 @@ one_shot = true
 [node name="PlayerDetectionArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="PlayerDetectionArea"]
 shape = SubResource( 3 )

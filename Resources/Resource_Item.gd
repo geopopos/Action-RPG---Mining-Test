@@ -6,35 +6,57 @@ enum {
 	TARGET_PLAYER
 }
 
-var mined_item_data = {
+var resource_item_data = {
 	"1": {
 		"id": "1",
 		"item_name": "Rock",
 		"stackable": true,
+		"type": "Resource",
 		"inventory_texture": "res://Minable/Mined.png"
 	},
 	"2": {
 		"id": "2",
 		"item_name": "Iron Ore",
 		"stackable": true,
+		"type": "Resource",
 		"inventory_texture": "res://Minable/mined-iron.png"
 	},
 	"3": {
 		"id": "3",
 		"item_name": "Diamond Ore",
 		"stackable": true,
+		"type": "Resource",
 		"inventory_texture": "res://Minable/mined-diamond.png"
 	},
 	"4": {
 		"id": "4",
 		"item_name": "Wood",
 		"stackable": true,
+		"type": "Resource",
 		"inventory_texture": "res://Forrestry/Wood.png"
-	}
+	},
+	"5": {
+		"id": "5",
+		"item_name": "PickAxe",
+		"stackable": true,
+		"type": "Equippable",
+		"inventory_texture": "res://Equippable/pickaxe.png",
+		"category": "pickaxe",
+		"strength": 1
+	},
+	"6": {
+		"id": "6",
+		"item_name": "Axe",
+		"stackable": true,
+		"type": "Equippable",
+		"inventory_texture": "res://Equippable/axe.png",
+		"category": "axe",
+		"strength": 1
+	},
 }
 
 export(String) var id
-var mined_item
+var resource_item
 var direction
 var item_data
 var velocity = Vector2.ZERO
@@ -51,21 +73,25 @@ export(String) var audioFile = "res://SFX/pickupCoin.wav"
 
 signal item_pickup(audioFile)
 
-func set_up(minable_id, global_position):
-	id = minable_id
-	mined_item = mined_item_data[id]
-	item_data = {
-		"id": mined_item["id"],
-		"item_name": mined_item["item_name"],
-		"inventory_texture": mined_item["inventory_texture"],
-		"stackable": mined_item["stackable"]
-	}
+func set_up(resource_id, global_position):
+	id = resource_id
 	self.global_position = global_position
 	
 
 func _ready():
 	var _nr = self.connect("item_pickup",get_tree().current_scene, "play_sound")
-	sprite.texture = load(mined_item["inventory_texture"])
+	resource_item = resource_item_data[id]
+	item_data = {
+		"id": resource_item["id"],
+		"item_name": resource_item["item_name"],
+		"inventory_texture": resource_item["inventory_texture"],
+		"stackable": resource_item["stackable"],
+		"type": resource_item["type"]
+	}
+	if resource_item["type"] == "Equippable":
+		item_data["category"] = resource_item["category"]
+		item_data["strength"] = resource_item["strength"]
+	sprite.texture = load(resource_item["inventory_texture"])
 	timer.start(0.5)
 	freeTimer.start(10)
 	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Minable/Minable.png" type="Texture" id=1]
-[ext_resource path="res://Forrestry/Resource.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Resource.gd" type="Script" id=2]
+[ext_resource path="res://UI/greenbar.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.5, 2 )
@@ -14,7 +15,7 @@ height = 4.0
 radius = 8.0
 height = 10.0
 
-[node name="Tree" type="KinematicBody2D"]
+[node name="Resource" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -40,5 +41,11 @@ position = Vector2( 0, 5 )
 rotation = 1.5708
 shape = SubResource( 3 )
 disabled = true
+
+[node name="Health" type="Sprite" parent="."]
+position = Vector2( 0, 20 )
+texture = ExtResource( 3 )
+hframes = 8
+frame = 6
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]

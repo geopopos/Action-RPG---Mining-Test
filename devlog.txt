@@ -1,9 +1,12 @@
 11-23-2022
 [x] create forrestry nodes
 [] set up equippables system to be able to use different equippable types
-[] combine forrestry and mining into single set of nodes call ResourceItem, Resource, ResourceSpawner
-   - set up a dicitionary that is read in with literally all of the possible resource data
-   - set up attribute for which sort of equippable could hit it
+   [x] animations
+   [x] type
+   [] Set Up Equippable Menu
+[x] combine forrestry and mining into single set of nodes call ResourceItem, Resource, ResourceSpawner
+   [x] set up a dicitionary that is read in with literally all of the possible resource data
+   [x] set up attribute for which sort of equippable could hit it
 
 
 

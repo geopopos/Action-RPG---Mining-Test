@@ -3,7 +3,7 @@ extends Node2D
 export var spawn_rate = 1
 export var spawn_frequency = 10
 export(String, "rock", "iron", "diamond", "wood") var resourceType
-export(Resource) var ResourceScene = preload("res://Forrestry/Resource.tscn")
+export(Resource) var ResourceScene = preload("res://Resources/Resource.tscn")
 
 
 enum {

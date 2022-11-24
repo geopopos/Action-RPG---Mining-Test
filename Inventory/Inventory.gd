@@ -25,29 +25,36 @@ func add_item(item):
 			if item.get("stackable"):
 				# if so check if stack is full
 				if inventory[inventory_slot]["count"] >= inventory_stacking:
-					append_inventory_item(item["id"], item["item_name"], item["inventory_texture"], 1)
+					append_inventory_item(item, 1)
 				else:
 					# if not full increment inventory count of item by 1
 					inventory[inventory_slot]["count"] += 1
 					print(inventory)
 					return {"picked_up": true}
 			else:
-				append_inventory_item(item["id"], item["item_name"], item["inventory_texture"], 1)
+				append_inventory_item(item, 1)
 				print(inventory)
 				return {"picked_up": true}
 		# If not add item to inventory
 		else:
-			append_inventory_item(item["id"], item["item_name"], item["inventory_texture"], 1)
+			append_inventory_item(item, 1)
 			print(inventory)
 			return {"picked_up": true}
 	
 	
-func append_inventory_item(id, item_name, texture, count):
+func append_inventory_item(item, count):
 	var inventory_item = {
-			"id": id,
-			"name": item_name,
-			"texture": texture,
-			"count": count
+			"id": item["id"],
+			"name": item["item_name"],
+			"texture": item["inventory_texture"],
+			"count": count,
+			"type": item["type"]
 		}
+	
+	if item["type"] == "Equippable":
+		inventory_item["equippable_info"] = {
+				"category": item["category"],
+				"strength": item["strength"]
+			}
 		
 	inventory.append(inventory_item)
