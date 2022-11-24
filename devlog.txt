@@ -9,6 +9,11 @@
    [x] set up attribute for which sort of equippable could hit it
 
 
+[] make it so that players are loaded from a save file
+   [] what position they are in
+   [] what scene they are on
+   [] what items they have equipped
+   [] what is in their inventory
 
 
 
