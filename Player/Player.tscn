@@ -107,7 +107,6 @@ anims/Mining = SubResource( 7 )
 anims/Walking = SubResource( 6 )
 
 [node name="Inventory" parent="." instance=ExtResource( 3 )]
-inventory_size = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

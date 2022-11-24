@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/fall.wav-bbfc28697ce678874a2cf2c986e54d13.sample"
+path="res://.import/fallWood.wav-ac8d70e9d240d0755c15bc6c15b3d773.sample"
 
 [deps]
 
-source_file="res://SFX/fall.wav"
-dest_files=[ "res://.import/fall.wav-bbfc28697ce678874a2cf2c986e54d13.sample" ]
+source_file="res://SFX/fallWood.wav"
+dest_files=[ "res://.import/fallWood.wav-ac8d70e9d240d0755c15bc6c15b3d773.sample" ]
 
 [params]
 

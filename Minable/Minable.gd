@@ -30,6 +30,7 @@ var minable_data = {
 onready var sprite = $Sprite as Sprite
 onready var hurtboxCollisionShape = $Hurtbox/CollisionShape2D
 var audioFile = "res://SFX/Rock_Break.wav"
+var hitAudio = "res://SFX/pickaxe-hit-rock.wav"
 onready var Effect = preload("res://Effects/Effect.tscn")
 
 
@@ -51,6 +52,7 @@ func _ready():
 
 func _on_Hurtbox_area_entered(area):
 	if area.get("type") == "Mining":
+		emit_signal("minable_broken", hitAudio)
 		var damage = area.strength
 		health -= damage
 		var frame = ceil(float(health)/(max_health/3))
